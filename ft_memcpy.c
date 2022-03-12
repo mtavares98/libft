@@ -6,14 +6,13 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:02:27 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/12 23:13:43 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/12 23:30:03 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//In this way passed the tests but, 100% on one of the benchmark.
-//it will be changed in the future!
+//Another idea that i have for pontentially more performance
 /* void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
