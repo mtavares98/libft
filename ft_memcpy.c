@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:02:27 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/13 22:37:22 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:52:37 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	s = (char *)src;
 	if (!dst && !src)
 		return (NULL);
-	i = 0;
-	while (s[i] && i < n)
-	{
+	i = -1;
+	while (s[++i] && i < n)
 		d[i] = s[i];
-		i++;
-	}
 	return (dst);
 }
