@@ -6,35 +6,24 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:12:15 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/12 23:28:23 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/13 22:41:21 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Another idea that i have for pontentially more performance
-/* void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t	i;
-
-	if (len <= 0)
-		return (b);
-	else
-	{
-		i = len -1;
-		*(unsigned char *)(b + i) = (unsigned char)c;
-		return (ft_memset(b, c, --len));
-	}
-} */
-
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	chr;
 
-	i = 0;
+	chr = c;
+	str = b;
+	i = -1;
 	if (!b)
 		return (NULL);
-	while (len--)
-		*(unsigned char *)(b + i) = (unsigned char)c;
+	while (++i < len)
+		str[i] = c;
 	return (b);
 }
