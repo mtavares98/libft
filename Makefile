@@ -6,7 +6,7 @@
 #    By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/06 17:42:50 by mtavares          #+#    #+#              #
-#    Updated: 2022/03/12 23:31:20 by mtavares         ###   ########.fr        #
+#    Updated: 2022/03/13 01:28:43 by mtavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,7 @@ OBJS			=	$(SRCS:.c=.o)
 
 CC 				=	gcc
 
-INCLUDE 		=	libft.h
-
-CFLAGS			=	-Wall -Werror -Wextra -I $(INCLUDE)
+CFLAGS			=	-Wall -Werror -Wextra -I.
 
 all: $(NAME)
 
