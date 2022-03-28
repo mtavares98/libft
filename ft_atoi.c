@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:47 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/13 23:31:13 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/28 23:04:52 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (ft_isdigit(*str))
-		n = n * 10 + s * (*(str++) - '0');
-	if (n > 2147483647)
-		return (-1);
-	if (n < -2147483648)
-		return (0);
+	{
+		n = n * 10 + s * (*str - '0');
+		str++;
+		if (n > 2147483647)
+			return (-1);
+		if (n < -2147483648)
+			return (0);
+	}
 	return (n);
 }
