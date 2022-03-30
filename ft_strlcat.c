@@ -6,12 +6,13 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:40:50 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/13 22:55:49 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/30 23:08:30 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <strings.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -23,11 +24,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	src_length = ft_strlen(src);
 	dest_length = ft_strlen(dst);
 	j = dest_length;
-	i = -1;
-	if (dest_length >= dstsize - 1 && dstsize <= 0)
+	i = 0;
+	if (dest_length >= dstsize - 1 || dstsize <= 0)
 		return (dstsize + src_length);
-	while (src[++i] && dest_length + i < dstsize - 1)
-		dst[j + i] = src[i];
+	while (src[i] && j < dstsize - 1)
+		dst[j++] = src[i++];
 	dst[j] = 0;
 	return (dest_length + src_length);
+}
+
+int	main(void)
+{
+	char	dst[] = "\0\0\0\0\0\0\0\0\0\0\0\0";
+
+	printf("%lu\n", ft_strlcat(dst, "AAAAA", 1));
+	printf("%s\n", dst);
 }

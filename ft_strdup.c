@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:50:17 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/13 23:27:23 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/03/30 21:58:27 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strdup(const char *s1)
 {
 	size_t	i;
 	char	*scpy;
-	int		len;
+	size_t	len;
 
 	len = ft_strlen(s1) + 1;
 	scpy = (char *)malloc(len * sizeof(char));
