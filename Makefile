@@ -6,7 +6,7 @@
 #    By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/06 17:42:50 by mtavares          #+#    #+#              #
-#    Updated: 2022/04/15 11:41:12 by mtavares         ###   ########.fr        #
+#    Updated: 2022/04/16 13:18:35 by mtavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,16 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c \
 					ft_toupper.c ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c \
 					ft_putstr_fd.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c
 
-SRCS_B			=	ft_lstsize.c ft_lstlast.c ft_lstadd_front.c ft_lstadd_back.c \
-					ft_lstnew.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-			
+SRCS_B			=	ft_lstsize.c ft_lstlast.c ft_lstadd_front.c ft_lstadd_back.o \
+					ft_lstnew.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.o
+
 NAME			=	libft.a
 
 OBJS			=	$(SRCS:.c=.o)
 
 OBJS_B			=	$(SRCS_B:.c=.o)
 
-CC 				=	clang
+CC 				=	gcc
 
 CFLAGS			=	-Wall -Werror -Wextra -I.
 
@@ -40,13 +40,17 @@ bonus:		$(NAME) $(OBJS_B)
 				ar rcs $(NAME) $(OBJS_B)
 
 clean:
-				rm -f $(OBJS)
+				rm -f $(OBJS) $(OBJS_B)
 
 fclean: 	clean
 				rm -f $(NAME)
 
 re:			fclean all
 
-re:			fclean bonus	
+rebonus:	fclean bonus
 
-.PHONY: all clean fclean re bonus rebonus
+so:
+			$(CC) -shared -fPIC $(CFLAGS) $(SRCS)
+			gcc -shared -o libft.so $(OBJS)
+
+.PHONY: all clean fclean re bonus rebonus so

@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 18:53:14 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/30 21:57:13 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/04/16 14:21:02 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	ft_bzero(void *s, size_t n)
 
 	str = s;
 	i = -1;
-	if (!s)
-		return ;
 	while (++i < n)
 		str[i] = 0;
 }

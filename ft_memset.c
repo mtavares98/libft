@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 15:12:15 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/30 22:04:37 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/04/16 14:20:15 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	*str;
 	unsigned char	chr;
 
-	if (!b)
-		return (NULL);
 	chr = c;
 	str = b;
 	i = -1;
