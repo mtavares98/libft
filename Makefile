@@ -50,7 +50,7 @@ re:			fclean all
 rebonus:	fclean bonus
 
 so:
-			$(CC) -shared -fPIC $(CFLAGS) $(SRCS)
-			gcc -shared -o libft.so $(OBJS)
+			$(CC) -shared -fPIC $(CFLAGS) $(SRCS) $(SRCS_B)
+			gcc -shared -o libft.so $(OBJS) $(OBJS_B)
 
 .PHONY: all clean fclean re bonus rebonus so
