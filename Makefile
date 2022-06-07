@@ -6,7 +6,7 @@
 #    By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/06 17:42:50 by mtavares          #+#    #+#              #
-#    Updated: 2022/04/16 13:18:35 by mtavares         ###   ########.fr        #
+#    Updated: 2022/06/07 22:27:38 by mtavares         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,24 +33,24 @@ CFLAGS			=	-Wall -Werror -Wextra -I.
 
 all:		$(NAME)
 
-$(NAME): 	$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+%.o:		%.c
+		@$(CC) $(CFLAGS) -c $< -o $@
 
-bonus:		$(NAME) $(OBJS_B)
-				ar rcs $(NAME) $(OBJS_B)
+$(NAME): 	$(OBJS)
+		@ar rcs $(NAME) $(OBJS)
+
+b:		$(NAME) $(OBJS_B) $(OBJS)
+		@ar rcs $(NAME) $(OBJS_B) $(OBJS)
 
 clean:
-				rm -f $(OBJS) $(OBJS_B)
+		rm -f $(OBJS) $(OBJS_B)
 
 fclean: 	clean
-				rm -f $(NAME)
+		rm -f $(NAME)
 
 re:			fclean all
 
-rebonus:	fclean bonus
+reb:	fclean b
 
-so:
-			$(CC) -shared -fPIC $(CFLAGS) $(SRCS) $(SRCS_B)
-			gcc -shared -o libft.so $(OBJS) $(OBJS_B)
-
-.PHONY: all clean fclean re bonus rebonus so
+.SILENT: all clean fclean re b reb %.o
+.PHONY: all clean fclean re b reb

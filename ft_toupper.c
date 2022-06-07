@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 20:04:03 by mtavares          #+#    #+#             */
-/*   Updated: 2022/04/16 14:41:30 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:16:08 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	ft_toupper(int c)
 {
 	unsigned char	chr;
 
-        if ((c > -129 && c < -1) || (c > -1 && c < 256))
-        {
-	  chr = c;
-	  if (chr >= 'a' && chr <= 'z')
-	  	chr -= 32;
-	  return (chr);
-        }
-        return (c);
+	if ((c > -129 && c < -1) || (c > -1 && c < 256))
+	{
+		chr = c;
+		if (chr >= 'a' && chr <= 'z')
+		chr -= 32;
+		return (chr);
+	}
+	return (c);
 }
