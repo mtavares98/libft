@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:47 by mtavares          #+#    #+#             */
-/*   Updated: 2022/09/01 23:10:45 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/09/01 23:23:09 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_atoi(const char *s)
 	int	n;
 
 	n = 0;
-	sig = 1;
 	while (*s > 8 && *s < 14 || *s == 32)
 		s++;
 	sig = (*s != '-') - (*s == '-');
