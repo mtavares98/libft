@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:07:29 by mtavares          #+#    #+#             */
-/*   Updated: 2022/09/01 22:32:44 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/09/02 00:38:57 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 static char	*ft_itoa_aux(char *str, int *numdig, int counter, int n)
 {
 	*numdig = counter;
-	if (n > 9)
+	if (n > 9 || n < -9)
 		str = ft_itoa_aux(str, numdig, counter + 1, n / 10);
 	if (!str)
-		str = ft_calloc(sizeof(char), counter + 1);
-	if (!str)
-		return (NULL);
-	str[*numdig - counter] = (n % 10) + 48;
+	{
+		str = malloc(sizeof(char) * (counter + 1 + (n < 0)));
+		if (!str)
+			return (NULL);
+		if (n < 0)
+			str[0] = '-';
+	}
+	str[*numdig - counter + (n < 0)] = (n % 10) * ((n > 0) - (n < 0)) + 48;
 	return (str);
 }
 
