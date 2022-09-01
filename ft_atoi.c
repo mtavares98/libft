@@ -3,38 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtavares <mtavares@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mtavares <mtavares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:47 by mtavares          #+#    #+#             */
-/*   Updated: 2022/03/28 23:04:52 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/09/01 23:10:45 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *s)
 {
-	int			s;
-	long long	n;
+	int	sig;
+	int	n;
 
-	s = 1;
 	n = 0;
-	while ((*str > 8 && *str < 14) || *str == 32)
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			s *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-	{
-		n = n * 10 + s * (*str - '0');
-		str++;
-		if (n > 2147483647)
-			return (-1);
-		if (n < -2147483648)
-			return (0);
-	}
+	sig = 1;
+	while (*s > 8 && *s < 14 || *s == 32)
+		s++;
+	sig = (*s != '-') - (*s == '-');
+	while (*s >= '0' && *s <= '9')
+		n = (n * 10) + sig * (*s++ - '0');
 	return (n);
 }
