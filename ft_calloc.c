@@ -6,7 +6,7 @@
 /*   By: mtavares <mtavares@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 14:16:53 by mtavares          #+#    #+#             */
-/*   Updated: 2022/09/01 23:32:18 by mtavares         ###   ########.fr       */
+/*   Updated: 2022/09/02 00:47:52 by mtavares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	int		total;
+	size_t	total;
 	void	*ptr;
 
 	total = (int)(count * size);
